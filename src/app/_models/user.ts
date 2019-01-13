@@ -1,3 +1,5 @@
+import { Photo } from './Photo';
+
 // Optional properties must come After the required properties
 export interface User {
     id: number;
