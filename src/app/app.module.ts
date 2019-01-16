@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppNgxBootstrapModule } from './app-ngx-bootstrap.module';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -45,6 +46,7 @@ export function tokenGetter(){
       HttpClientModule,
       FormsModule,
       AppNgxBootstrapModule,
+      NgxGalleryModule,
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
          config:{
