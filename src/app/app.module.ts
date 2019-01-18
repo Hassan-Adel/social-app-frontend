@@ -9,6 +9,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 // Resolvers
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -66,7 +67,8 @@ export function tokenGetter() {
       UserService,
       AuthGuard,
       MemberDetailResolver,
-      MemberListResolver
+      MemberListResolver,
+      MemberEditResolver
    ],
    bootstrap: [
       AppComponent
