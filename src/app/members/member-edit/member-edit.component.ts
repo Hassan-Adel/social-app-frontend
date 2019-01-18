@@ -25,4 +25,8 @@ export class MemberEditComponent implements OnInit {
       }
     );
   }
+  updateUser(){
+    console.log("gfdg");
+    
+  }
 }
