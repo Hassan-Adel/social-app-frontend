@@ -17,12 +17,12 @@ export const appRoutes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'members', component: MemberListComponent, resolve: { users: MemberListResolver } },
+      { path: 'members/edit', component: MemberEditComponent},// we'll get the id from decoding the token
       {
         path: 'members/:id',
         component: MemberDetailComponent,
         resolve: { user: MemberDetailResolver }
       }, // user : how we're gonna access the data from our route
-      { path: 'members/edit', component: MemberEditComponent}, // we'll get the id from decoding the token 
       { path: 'messages', component: MessagesComponent },
       { path: 'lists', component: ListsComponent }
     ]
