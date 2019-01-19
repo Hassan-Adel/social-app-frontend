@@ -10,6 +10,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -66,6 +67,7 @@ export function tokenGetter() {
       AlertifyService,
       UserService,
       AuthGuard,
+      PreventUnsavedChangesGuard,
       MemberDetailResolver,
       MemberListResolver,
       MemberEditResolver
