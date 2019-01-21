@@ -45,5 +45,20 @@ export class PhotoEditorComponent implements OnInit {
 
     // Issue with ng2-uploader we need to specify that the file is uploaded without credentials(cookies) to avoid a CORS error
     this.uploader.onAfterAddingFile = (file) => {file.withCredentials = false;};
+
+    // Show the new photo after upload by pushing the response photo to the array of photos
+    this.uploader.onSuccessItem = (item, response, status, headers) => {
+      if(response) {
+        const res: Photo = JSON.parse(response);
+        const photo = {
+          id: res.id,
+          url: res.url,
+          dateAdded: res.dateAdded,
+          descriptioon: res.descriptioon,
+          isMain: res.isMain
+        };
+        this.photos.push(photo);
+      }
+    };
   }
 }
