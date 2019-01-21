@@ -22,4 +22,9 @@ export class UserService {
   updateUser(id: number, user: User): Observable<User> {
     return this.http.put<User>(this.baseUrl + 'users/' + id, user);
   }
+
+  // http.post requires a body so we'll send an empty object
+  setMainPhoto(userId: number, id: number) {
+    return this.http.post(this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain', {});
+  }
 }
