@@ -6,6 +6,7 @@ import { AppNgxBootstrapModule } from './app-ngx-bootstrap.module';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 // Resolvers
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
@@ -54,6 +55,7 @@ export function tokenGetter() {
       FormsModule,
       AppNgxBootstrapModule,
       NgxGalleryModule,
+      FileUploadModule,
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
          config:{
