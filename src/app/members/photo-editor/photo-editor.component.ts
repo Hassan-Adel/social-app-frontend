@@ -16,6 +16,7 @@ export class PhotoEditorComponent implements OnInit {
   uploader: FileUploader;
   hasBaseDropZoneOver = false;
   baeUrl = environment.apiUrl;
+  currentMainPhoto: Photo;
 
   constructor(
     private authService: AuthService,
@@ -66,7 +67,11 @@ export class PhotoEditorComponent implements OnInit {
     this.userService.setMainPhoto(this.authService.decodedToken.nameid, photo.id)
     .subscribe(
       ()=> {
-        console.log('successfully set to main');
+        // Reset the current main photo to false
+        this.currentMainPhoto = this.photos.filter(p => p.isMain === true)[0];
+        this.currentMainPhoto.isMain = false;
+        // Set the is Main to true
+        photo.isMain = true;
       }, error => {
         this.alertify.error(error);
       });
