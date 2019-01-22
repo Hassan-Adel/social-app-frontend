@@ -51,4 +51,9 @@ export class MemberEditComponent implements OnInit {
         }
       );
   }
+
+  // Update the user photo when the isMain flag is changed in the child (photo-editor.component)
+  updateMainPhoto(photoUrl){
+    this.user.photoUrl = photoUrl;
+  }
 }
