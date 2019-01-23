@@ -13,6 +13,7 @@ import { AuthService } from 'src/app/_services/auth.service';
 })
 export class MemberEditComponent implements OnInit {
   user: User;
+  photoUrl: string;
   @ViewChild('editForm') editForm: NgForm;
   // Prevent the user from closiong the browser without saving changes
   @HostListener('window:beforeunload', ['$event'])
@@ -37,6 +38,7 @@ export class MemberEditComponent implements OnInit {
         this.alertify.error(error);
       }
     );
+    this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
   updateUser() {
     this.userService
