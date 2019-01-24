@@ -40,7 +40,6 @@ export class AuthService {
   }
 
   register(user: User) {
-    debugger;
     return this.http.post(this.baseUrl + 'register', user);
   }
 

@@ -46,7 +46,6 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    debugger;
     // And this effectively clone's the values in here into the empty objects. And then assigns the empty object to this user.
     if (this.registerForm.valid) {
       this.user = Object.assign({}, this.registerForm.value);
