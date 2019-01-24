@@ -3,6 +3,7 @@ import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { fbind } from 'q';
+import { BsDatepickerConfig } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-register',
@@ -13,9 +14,15 @@ export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
   registerForm: FormGroup;
+  // when we use a partial class we effectively make all of the properties in the tie optional.
+  bsConfig: Partial<BsDatepickerConfig>;
+
     constructor(private authService: AuthService, private alertify: AlertifyService, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.bsConfig = {
+      containerClass: 'theme-red'
+    };
     this.createRegisterForm();
   }
 
