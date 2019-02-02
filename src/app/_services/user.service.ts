@@ -95,7 +95,7 @@ export class UserService {
 
     // Add observe:'response' because by default only the body is observed and we need the headers too
     return this.http
-      .get<Message[]>(this.baseUrl + 'users/' + id + '/message', { observe: 'response', params })
+      .get<Message[]>(this.baseUrl + 'users/' + id + '/messages', { observe: 'response', params })
       .pipe(
         map(response => {
           paginatedResult.result = response.body;
