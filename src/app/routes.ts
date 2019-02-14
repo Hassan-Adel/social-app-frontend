@@ -13,6 +13,7 @@ import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.gu
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 
+// Note Agular chooses the routes basd on what it finds first .Careful with the ordering
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
